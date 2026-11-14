@@ -1,3 +1,14 @@
+---
+title: WA-AKG
+emoji: 🚀
+colorFrom: green
+colorTo: gray
+sdk: docker
+app_port: 3000
+pinned: false
+license: mit
+---
+
 <div align="center">
 
 # 🚀 WA-AKG: The Ultimate WhatsApp Gateway & Dashboard
