@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: wa-akg
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /auth/login
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL # Neon: postgresql://user:pass@host/db?sslmode=require&schema=waakg
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: BASE_URL
+        sync: false
+      - key: NEXTAUTH_URL
+        sync: false
+      - key: AUTH_TRUST_HOST
+        value: "true"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: HOSTNAME
+        value: 0.0.0.0
+      - key: TZ
+        value: America/Sao_Paulo
+      - key: LOCALE
+        value: pt-BR
+      - key: DEFAULT_LANGUAGE
+        value: pt-BR
+      - key: BAILEYS_LOG_LEVEL
+        value: error
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: NEXT_PUBLIC_SWAGGER_ENABLED
+        value: "false"
+      - key: ENABLE_TELEMETRY
+        value: "false"
